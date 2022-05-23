@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,600;0,700;1,400&display=swap');
+
+:root {
+    --Dark-Blue /*(Dark Mode Elements)*/: hsl(209, 23%, 22%);
+    --Very-Dark-Blue /*(Dark Mode Background)*/: hsl(207, 26%, 17%);
+    --Very-Dark-Blue-light /*(Light Mode Text)*/: hsl(200, 15%, 8%);
+    --Dark-Gray /*(Light Mode Input)*/: hsl(0, 0%, 52%);
+    --Very-Light-Gray /*(Light Mode Background)*/: hsl(0, 0%, 98%);
+    --White /*(Dark Mode Text & Light Mode Elements)*/: hsl(0, 0%, 100%);   
+}
+
+
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito Sans',sans-serif;
+}
+.icon{
+    width: 25px;
+   
+}
+
+.icon-white{
+    display: none;
+}
+.dark-icon,.light-icon{
+    transform: rotate(330deg);
+}
+.dark-icon{
+    display: none;
+}
+.head-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+}
+.head-container > p{
+
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.darkmode{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 10px;
+}
+.darkmode h6{
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+.body-container{
+    background-color: var(--Very-Light-Gray);
+    padding: 40px 80px;
+}
+.body-head{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.input-container{
+    width: 200px;
+    height: 40px;
+    background-color: var(--White);
+    position: relative;
+    display: flex;
+    border-radius: 4px;
+    padding:0 15px;
+}
+.input{
+    height: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0 10px;
+    font-size: 16px;
+      
+}
+.search-icon,.search-icon-white{
+    width: 20px;
+}
+.search-by-country{
+    display: inline-flex;
+    flex-direction: column;
+    width: 140px;
+}
+.display-container > img{ 
+    background-color: #ccc;
+    height: 35px;
+    padding: 5px;
+    width: 45px;
+}
+.display-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    column-gap: 5px;
+}
+
+.country-input-container{
+    position: relative;
+    height: 35px;
+    width: 100%;
+    
+}
+.arrow-down, .arrow-down-white{
+    position: absolute;
+    width: 10px;
+    right: 10px;
+    top: 30%;
+    
+    
+}
+.country-input{
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #222;
+    padding: 5px 7px;
+    text-transform: capitalize;
+    color: #000;
+}
+.activate-country-input{
+    border: 2px solid #000;
+}
+
+.countries-container{
+    position: absolute;
+    z-index: 4;
+    display: inline;
+    background-color: var(--White);
+    width: 140px;
+    margin: 36px 0;
+    padding: 0 10px;  
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 1px 9px 10px #222; 
+    visibility: hidden;
+    cursor: pointer;
+}
+.countries-container p {
+    margin: 6px 0;
+    font-size: 0.9rem;
+}
+
+.body-info-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    justify-content: space-around;
+    gap:50px;
+
+}
+.country-info{
+    background-color: var(--White);
+    box-shadow: 2px 2px 8px #ccc;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    border-radius: 10px;
+    height: 100%;
+}
+.country-info img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.country-details{
+    padding: 0 20px;
+}
+.country-details > h5{
+    font-size: 1rem;
+    color: #222;
+    margin:8px 0 ;
+}
+.country-details p{
+    font-size: 0.9rem;
+    margin: 10px 0;
+    color: #222;
+}
+.see-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    text-transform: uppercase;
+}
+.seemore-container{
+    background-color: rgba(225, 225, 225, 0.9);
+    width: 200px;
+    height: 50px;
+    font-size:1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.see-arrow-down,.see-arrow-down-white{
+    margin: 0 10px;
+    width: 20px;
+}
+
+.country-flag{
+    height: 100%;
+    width: 100%;
+}
+/* Darkmode */
+.darkmode-activate {
+    background-color:var(--Very-Dark-Blue);
+}
+.darkmode-activate .head-container{
+    background-color: var(--Dark-Blue);
+    color: var(--White);
+}
+.darkmode-activate .head-container .light-icon{
+    display: none;
+}
+.darkmode-activate .head-container .dark-icon{
+    display: block;
+}
+.darkmode-activate .body-container{
+    background-color: var(--Very-Dark-Blue);
+}
+.darkmode-activate .body-container .input-container{
+    background-color: var(--Dark-Blue);
+}
+.darkmode-activate .body-container .input-container .search-icon{
+    display: none;
+}
+.darkmode-activate .body-container .input-container .search-icon-white{
+    display: block;
+}
+.darkmode-activate .body-container .input{
+    background-color: var(--Dark-Blue);
+    color: #fff;
+}
+.darkmode-activate .display-container .icon{
+    display: none;
+}
+.darkmode-activate .display-container .icon-white{
+    display: block;
+    background-color: var(--Dark-Blue);
+}
+.darkmode-activate .display-container .country-input{
+    display: block;
+    background-color: var(--Dark-Blue);
+    border: 1px solid #ccc;
+    color: #ccc;
+}
+.darkmode-activate .display-container .countries-container{
+
+    color: #fff;
+    background-color: var(--Dark-Blue);
+    border: 1px solid #ccc;
+}
+.darkmode-activate .display-container .activate-country-input{
+    border: 2px solid #fff;
+}
+.darkmode-activate .display-container .arrow-down-white{
+    display: block;
+    background-color: transparent;
+} 
+.darkmode-activate  .country-info{
+    background-color: var(--Dark-Blue);
+    box-shadow: unset;
+} 
+.darkmode-activate  .country-info h5,.darkmode-activate  .country-info p {
+    color: var(--White);
+    box-shadow: unset;
+}
+.darkmode-activate  .seemore-container{
+    background-color: var(--Dark-Blue);
+    color: #fff;
+} 
+.darkmode-activate  .seemore-container .see-arrow-down{
+    display: none;
+} 
+.darkmode-activate  .seemore-container .see-arrow-down-white{
+    display: block;
+} 
+@media(max-width:992px){
+    .body-info-container{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media(max-width:754px){
+    .body-info-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .input-container{
+        width: 50%;
+    }
+    .input{
+        width: 100%;
+    }
+    .search-by-country{
+        width: 80px;
+    }
+    .countries-container{
+        width: 80px;
+    }
+}
+@media(max-width:572px){
+    .body-info-container{
+        grid-template-columns:1fr;
+        column-gap: 0;
+    }
+    .input-container{
+        width: 50%;
+    }
+    .input{
+        width: 100%;
+       
+    }
+
+}
+@media(max-width:424px){
+    .input-container{
+        width: 100%;
+    }
+    .display-container{
+        width: 100%;
+        padding: 0;
+        column-gap: 0;
+        justify-content: space-between;
+    }
+    .search-by-country{
+        width: 50%;
+    }
+    .countries-container{
+        width: 50%;
+    }
+    .body-head{
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 10px;
+    }
+}
+@media(max-width:347px){
+    .head-container{
+        padding:  0 20px;
+    }
+    .body-container{
+        padding: 20px 20px;
+    }
+}
+/* Single country */
+
+
+.single-arrow-down,.single-arrow-down-white{
+    transform: rotate(90deg);
+    width: 12px;
+
+    margin: 0 6px;
+}
+.single-country{
+    background-color: var(--Very-Light-Gray);
+    padding: 30px 100px;
+    text-transform: capitalize;
+    height: 100vh;
+    display: none;
+}
+.backhome{
+    display: flex;
+    align-items: center;
+    background-color: var(--White);
+    box-shadow: 2px 5px 7px #ccc;
+    width: 100px;
+    height: 20px;
+    padding: 16px 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.single-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    height: 400px;
+}
+.single-flag{
+    width: 100%;
+    height: 400px;
+}
+.flag-details {
+    padding-left: 50px;
+    height: 100%;
+}
+.flag-details .flag-infos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    column-gap: 10px;
+}
+.flag-details > h1 {
+    margin-top: 0;
+}
+.flag-infos p {
+    font-weight: 600;
+}
+.border-countries {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 30px;
+}
+.border-countries > p{
+    font-weight: 600;
+}
+.flag-infos span{
+    font-weight: 300;
+}
+.border-country{
+    padding: 10px 20px;
+    background-color: var(--White);
+    box-shadow: 2px 3px 10px #ccc;
+}
+.borders{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.darkmode-activate .single-country{
+    background-color: var(--Very-Dark-Blue);
+}
+.darkmode-activate .single-country .backhome{
+    background-color: var(--Dark-Blue);
+    box-shadow: 2px 3px 7px #000;
+    color: #fff;
+}
+.darkmode-activate .single-country .backhome > .single-arrow-down{
+    display: none;
+}
+.darkmode-activate .single-country .backhome > .single-arrow-down-white{
+    display: block;
+}
+.darkmode-activate .single-country .flag-details {
+    color: #ccc;
+}
+.darkmode-activate .single-country .flag-details .border-country{
+    background-color: var(--Dark-Blue);
+    box-shadow: 2px 5px 7px #555;
+}
+@media(max-width:1009px){
+    .single-country{
+        height: 100%;
+    }
+    .single-content{
+        grid-template-columns: unset;
+        grid-template-rows: 1fr 1fr;
+        height: 100%;
+    }
+    .flag-details{
+        padding: 50px 0;
+    }
+}
+
+@media(max-width:671px){
+    .single-content{
+       display: flex;
+       flex-direction: column;
+    }
+    
+}
+@media(max-width:493px){
+    .flag-details .flag-infos{
+       display: flex;
+       flex-direction: column;
+    }
+    .single-country {
+        padding: 40px 30px;
+    }
+    .border-countries{
+        flex-direction: column;
+    }
+}
+
+.active-country{
+    visibility: visible;
+}
+
+.error  {
+    font-size: 1.3rem;
+    color: #000;
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    justify-self: flex-start;
+    
+}
+.darkmode-activate .error {
+    font-size: 1.3rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;    
+    width: 100%;
+}
